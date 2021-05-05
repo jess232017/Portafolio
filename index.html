@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portafolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shadow.css">
+</head>
+
+<body>
+    <!--Barra de navegacion-->
+    <div id="navbar" class="fixed">
+        <nav class="contenedor">
+            <div class="logo">DevFolio</div>
+            <input type="checkbox" id="click">
+            <label id="btn-menu" for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a class="active" href="#">Inicio</a></li>
+                <li><a href="#">Acerca de mí</a></li>
+                <li><a href="#">Habilidades</a></li>
+                <li><a href="#">Portafolio</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="hero">
+        <div class="c-flex justy-center align-center" style="z-index: 500; height: 100%;">
+            <h1>Jesús Hernández</h1>
+            <p class="subtitulo">Desarrollador de Software</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <!-- Sobre mi-->
+        <div class="box-shadow">
+            <div class="about">
+                <div class="profile align-center">
+                    <img class="profile-photo" src="img/Jesus Hernandez.png" alt="Jesus Hernández">
+                    <div>
+                        <p class="titulo">Perfil: <span class="lead">Desarrollador de Software</span></p>
+                        <p class="titulo">Email: <span class="lead">jess232016@gmail.com</span></p>
+                        <p class="titulo">Telef: <span class="lead">86793204</span></p>
+                    </div>
+                </div>
+                <div class="c-flex justy-between">
+                    <h3 class="title-2">Acerca de mí</h3>
+                    <p class="lead">
+                        ¡Hola! Mi nombre es Jesús Hernández desarrollador de software, apasionado por la tecnologia con muchas ganas de seguir aprendiendo.
+                    </p>
+                    <p class="lead">
+                        Tengo como objetivo consolidar mi carrera profesional en un ambiente que me ofrezca nuevos retos constantemente, retos que podré superar aplicando mis aptitudes, responsabilidad, capacidad de adaptación y motivación por aprender.
+                    </p>
+                    <a href="docs/CV - Jesús Hernández.docx" class="btn btn-primary ">
+                        <div class="flex justy-center align-items">
+                            <svg style="width: 24px; height:24px;">
+                                <use xlink:href="./img/svg-symbols.svg#icon-download"></use>
+                            </svg>
+                            <span> Descargar CV</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades-->
+        <h3 class="title-1">Skills</h3>
+        <div class="divisor"></div>
+        <p class="subtitle-1">Conocimientos técnicos y habilidades</p>
+
+        <!--FrontEnd-->
+        <h5 class="title-2 margin">Front-end</h5>
+        <div id="front-end" class="grid-skills mega">
+
+        </div>
+
+        <!-- Backend-->
+        <h5 class="title-2 margin">Back-end</h5>
+        <div id="back-end" class="grid-skills mega">
+
+        </div>
+    </main>
+
+    <!--Good-->
+    <div class="hero-2">
+        <div class="contenedor">
+            <h3 class="title-1 padding" style="color: white;">Destrezas</h3>
+            <div class="grid-skills">
+                <div class="c-flex justy-center align-center margin-mini">
+                    <svg class="able-icons">
+                        <use xlink:href="./img/svg-symbols.svg#icon-check"></use>
+                    </svg>
+                    <span>Proactivo</span>
+                </div>
+                <div class="c-flex justy-center align-center margin-mini">
+                    <svg class="able-icons">
+                        <use xlink:href="./img/svg-symbols.svg#icon-calendar"></use>
+                    </svg>
+                    <span>Responsable</span>
+                </div>
+                <div class="c-flex justy-center align-center margin-mini">
+                    <svg class="able-icons">
+                        <use xlink:href="./img/svg-symbols.svg#icon-group"></use>
+                    </svg>
+                    <span>Trabajo en equipo</span>
+                </div>
+                <div class="c-flex justy-center align-center margin-mini">
+                    <svg class="able-icons">
+                        <use xlink:href="./img/svg-symbols.svg#icon-medal"></use>
+                    </svg>
+                    <span>Orientado a Objetivos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin good-->
+
+    <div class="contenedor">
+        <div class="margin"></div>
+        <h3 class="title-1">Portafolio</h3>
+        <div class="divisor"></div>
+        <div class="margin"></div>
+
+        <div id="portafolio" class="grid-skills mega">
+
+        </div>
+    </div>
+
+    <div class="hero-3"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
