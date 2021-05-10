@@ -13,7 +13,17 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 firebase.analytics();
 
-//#region  habilidades
+//#region Hero
+var typed = new Typed('#dev-text', {
+    strings: ["Desarrollador de Software.", "Ingeniero en Computación."],
+    typeSpeed: 80,
+    loop: true,
+    backDelay: 1100,
+    backSpeed: 30
+});
+//#endregion
+
+//#region habilidades y portafolio
 db.ref().child('front-end').on('value', snap => {
     document.querySelector('#front-end').innerHTML = "";
     let frontEnd = snap.val();
@@ -47,36 +57,96 @@ db.ref().child('portafolio').on('value', snap => {
 
 function addSkills(data) {
 
-    let skill = document.createElement('div');
+    let skill = document.createElement("div");
     skill.classList = 'c-flex align-center margin-mini card-skills';
     skill.innerHTML = `
-        <svg class="able-icons">
-            <use xlink:href="./img/svg-symbols.svg#${data.imagen}"></use>
-        </svg>
-        <h2 class="title-3">${data.titulo}</h2>
-        <p class="s-description">${data.subtitulo}</p>
-    `;
+            <svg class="able-icons">
+                <use xlink:href="./img/svg-symbols.svg#${data.imagen}"></use>
+            </svg>
+            <a target="_blank" href="${data.url}"><h2 class="title-3">${data.titulo}</h2></a>
+            <p class="s-description">${data.subtitulo}</p>
+        `;
+
+    /*
+        ALTERNATIVA
+
+        let skill = document.createElement('div');
+        skill.classList = "card-skills square";
+        skill.innerHTML = `
+            <figure class="overlay-hover">
+                <div class="c-flex justy-center align-center" style="background-color: white">
+                    <svg class="able-icons">
+                        <use xlink:href="./img/svg-symbols.svg#${data.imagen}"></use>
+                    </svg>
+                    <a target="_blank" href="${data.url}"><h2 class="title-3">${data.titulo}</h2></a>
+                </div>
+                <figcaption class="c-flex justy-center align-center">
+                    <a target="_blank" href="${data.url}"><h3>${data.titulo}</h3></a>
+                    <p class="s-description">${data.subtitulo}</p>
+                </figcaption>
+            </figure>
+        `;
+    */
+
 
     document.querySelector(data.contenedor).appendChild(skill);
 }
 
 function addPortfs(contenedor, data) {
+    let herramientas = data.hecho_con,
+        tools = "";
+
+    herramientas.forEach(element => {
+        tools += `
+        <svg class="norm-icon">
+            <use xlink:href="./img/svg-symbols.svg#logo-${element}"></use>
+        </svg>
+        `;
+    });
 
     let portf = document.createElement('div');
     portf.classList = 'card-skills square';
     portf.innerHTML = `
-        <figure class="imghvr-slide-up">
+        <figure class="overlay-hover">
             <img src="img/portafolio/${data.imagen}">
+            <figcaption class="c-flex justy-center align-center">
+                <h3>hecho con</h3>
+                <a  class="flex" href="${data.url_github}" target="_blank">
+                    ${tools}
+                </a>
+            </figcaption>
         </figure>
-
-        <div class="descripcion">
-            <h2 class="title-3">${data.titulo}</h2>
-            <svg style="width: 32px; height: 32px;">
-                <use xlink:href="./img/svg-symbols.svg#logo-github"></use>
-            </svg>
-            <a target="_blank" href="${data.enlace}">Código</a><span class="subtitle-2"> /  ${data.lenguaje}  / ${data.fecha}</span>
+        <div class="card-body">
+            <div class="card-category">
+                <a href="${data.url_web}" target="_blank">VER PROYECTO</a>
+            </div>
+            <h2 class="title-3"><a target="_blank" href="${data.url_github}">${data.titulo}</a></h2>
+            <p class="s-description">${data.descripcion}</p>
         </div>
     `;
+
+    /*portf.innerHTML = `
+        <figure class="overlay-hover">
+            <img src="img/portafolio/${data.imagen}">
+            <figcaption>
+                <h3>Un Espacio Extra</h3>
+                <p>Agregar mas contenido aca</p>
+            </figcaption>
+        </figure>
+
+        <div class="card-body c-flex justy-between">
+            <h2 class="title-3">${data.titulo}</h2>
+            <div class="flex align-center">
+                <svg style="width: 32px; height: 32px">
+                    <use xlink:href="./img/svg-symbols.svg#logo-github"></use>
+                </svg>
+                <span style="padding: 6px;">
+                    <a target="_blank" href="${data.enlace}">Código</a>
+                    <span class="subtitle-2"> /  ${data.lenguaje}  / ${data.fecha}</span>
+                </span>    
+            </div>    
+        </div>
+    `;*/
 
     contenedor.appendChild(portf);
 }
@@ -87,8 +157,9 @@ let onTop = true,
     checked = false;
 const navbar = document.getElementById("navbar");
 const ckClick = document.getElementById("click");
+const btnMenu = document.getElementById("btn-menu");
 
-document.querySelector('#btn-menu').addEventListener('click', function() {
+btnMenu.addEventListener('click', function() {
     checked = !checked;
     if (checked) {
         navbar.classList.add('checked');
@@ -103,9 +174,16 @@ document.querySelector('#btn-menu').addEventListener('click', function() {
     }
 });
 
-window.onscroll = function() { scrollFunction() };
+let enlaces = document.querySelectorAll('ul li a');
 
-function scrollFunction() {
+enlaces.forEach(enlace => {
+    enlace.addEventListener('click', () => {
+        btnMenu.click();
+    });
+});
+
+
+window.onscroll = function() {
     if (document.body.scrollTop >= 20 || document.documentElement.scrollTop >= 20) {
         navbar.classList.add('scrolled');
         onTop = false;
@@ -115,5 +193,5 @@ function scrollFunction() {
             navbar.classList.remove('scrolled');
         }
     }
-}
+};
 //#endregion

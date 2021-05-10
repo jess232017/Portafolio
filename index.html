@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Portafolio</title>
+    <title>Portafolio - JEHG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
@@ -22,32 +25,34 @@
                 <i class="fas fa-bars"></i>
             </label>
             <ul>
-                <li><a class="active" href="#">Inicio</a></li>
-                <li><a href="#">Acerca de mí</a></li>
-                <li><a href="#">Habilidades</a></li>
-                <li><a href="#">Portafolio</a></li>
+                <li><a class="active" href="#inicio">Inicio</a></li>
+                <li><a href="#about-me">Acerca de mí</a></li>
+                <li><a href="#skill">Habilidades</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </div>
 
-    <header class="hero">
+    <header id="inicio" class="hero">
         <div class="c-flex justy-center align-center" style="z-index: 500; height: 100%;">
             <h1>Jesús Hernández</h1>
-            <p class="subtitulo">Desarrollador de Software</p>
+            <div class="flex">
+                <p id="dev-text" class="subtitulo"></p>
+            </div>
         </div>
     </header>
 
     <main class="contenedor">
         <!-- Sobre mi-->
-        <div class="box-shadow">
+        <div id="about-me" class="box-shadow">
             <div class="about">
                 <div class="profile align-center">
                     <img class="profile-photo" src="img/Jesus Hernandez.png" alt="Jesus Hernández">
                     <div>
-                        <p class="titulo">Perfil: <span class="lead">Desarrollador de Software</span></p>
-                        <p class="titulo">Email: <span class="lead">jess232016@gmail.com</span></p>
-                        <p class="titulo">Telef: <span class="lead">86793204</span></p>
+                        <p><strong>Perfil: </strong><span class="subtitle-1">Desarrollador de Software</span></p>
+                        <p><strong>Email: </strong><span class="subtitle-1">jess232016@gmail.com</span></p>
+                        <p><strong>Telef: </strong><span class="subtitle-1">86793204</span></p>
                     </div>
                 </div>
                 <div class="c-flex justy-between">
@@ -60,7 +65,7 @@
                     </p>
                     <a href="docs/CV - Jesús Hernández.docx" class="btn btn-primary ">
                         <div class="flex justy-center align-items">
-                            <svg style="width: 24px; height:24px;">
+                            <svg class="mini-icon">
                                 <use xlink:href="./img/svg-symbols.svg#icon-download"></use>
                             </svg>
                             <span> Descargar CV</span>
@@ -71,20 +76,23 @@
         </div>
 
         <!-- Habilidades-->
-        <h3 class="title-1">Skills</h3>
-        <div class="divisor"></div>
-        <p class="subtitle-1">Conocimientos técnicos y habilidades</p>
+        <div id="skill">
+            <h3 class="title-1">Habilidades</h3>
+            <div class="divisor"></div>
+            <p class="subtitle-1">Conocimientos técnicos y habilidades</p>
 
-        <!--FrontEnd-->
-        <h5 class="title-2 margin">Front-end</h5>
-        <div id="front-end" class="grid-skills mega">
+            <!--FrontEnd-->
+            <h5 class="title-2 margin">Front-end</h5>
+            <div id="front-end" class="grid-skills mega">
+            </div>
 
-        </div>
+            <!-- Backend-->
+            <h5 class="title-2 margin">Back-end</h5>
+            <div id="back-end" class="grid-skills mega">
 
-        <!-- Backend-->
-        <h5 class="title-2 margin">Back-end</h5>
-        <div id="back-end" class="grid-skills mega">
+            </div>
 
+            <div class="margin"></div>
         </div>
     </main>
 
@@ -126,18 +134,37 @@
         <div class="margin"></div>
         <h3 class="title-1">Portafolio</h3>
         <div class="divisor"></div>
+        <p class="subtitle-1">Mostrando algunos de mis mejores trabajos</p>
         <div class="margin"></div>
 
         <div id="portafolio" class="grid-skills mega">
 
         </div>
+
+        <div class="margin"></div>
     </div>
 
-    <div class="hero-3"></div>
+    <div class="hero-3">
+        <div class="contenedor">
+            <div class="flex justy-center align-center">
+                <form class="card-skills square">
+                    <h3 class="title-2">Contáctame</h3>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a id="fab" href="#inicio">
+        <svg class="mini-icon">
+            <use xlink:href="./img/svg-symbols.svg#icon-chevron"></use>
+        </svg>
+    </a>
 
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script src="/js/main.js"></script>
 </body>

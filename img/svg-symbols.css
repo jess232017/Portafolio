@@ -8,6 +8,11 @@
   height: 50px;
 }
 
+.icon-chevron {
+  width: 24px;
+  height: 24px;
+}
+
 .icon-download {
   width: 32px;
   height: 32px;
@@ -28,12 +33,22 @@
   height: 48px;
 }
 
+.logo-bootstrap {
+  width: 2500px;
+  height: 1992px;
+}
+
 .logo-c-sharp {
   width: 48px;
   height: 48px;
 }
 
 .logo-css {
+  width: 48px;
+  height: 48px;
+}
+
+.logo-firebase {
   width: 48px;
   height: 48px;
 }
@@ -66,6 +81,11 @@
 .logo-php {
   width: 256px;
   height: 135px;
+}
+
+.logo-sass {
+  width: 48px;
+  height: 48px;
 }
 
 .logo-sql {

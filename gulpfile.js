@@ -7,3 +7,7 @@ gulp.task(`sprites`, function() {
         .pipe(svgSymbols())
         .pipe(gulp.dest(`img`))
 })
+
+exports.default = function() {
+    watch('./img/svg/*.svg', oneSvg);
+}
