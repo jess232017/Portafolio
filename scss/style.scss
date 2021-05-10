@@ -189,6 +189,15 @@ img {
     text-align: center;
 }
 
+@media (min-width: 768px) {
+    .subtitle-1,
+    .title-2 {
+        &.no-margin {
+            text-align: left;
+        }
+    }
+}
+
 .divisor {
     width: 40px;
     height: 5px;
@@ -391,6 +400,7 @@ input[type="checkbox"] {
 
 .hero-3 {
     height: 150vh;
+    position: relative;
     background-image: url(../img/hero3.jpg);
 }
 
@@ -646,4 +656,25 @@ span.typed-cursor {
 
 .list-ico {
     line-height: 2;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: black;
+    opacity: .64;
+    p {
+        z-index: 5px;
+        margin: 0;
+        font-weight: bold;
+        color: rgb(221, 221, 221);
+        span {
+            color: var(--color-scrolled);
+        }
+    }
 }
