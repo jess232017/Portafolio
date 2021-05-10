@@ -18,12 +18,37 @@
   height: 32px;
 }
 
+.icon-email {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-github {
+  width: 32px;
+  height: 32px;
+}
+
 .icon-group {
   width: 32px;
   height: 32px;
 }
 
+.icon-linkedin {
+  width: 32px;
+  height: 32px;
+}
+
 .icon-medal {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-phone {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-whatsapp {
   width: 32px;
   height: 32px;
 }

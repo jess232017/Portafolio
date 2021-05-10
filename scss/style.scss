@@ -55,6 +55,10 @@ h6 {
     color: #1e1e1e;
 }
 
+ul li {
+    list-style: none;
+}
+
 img {
     width: 100%;
 }
@@ -165,8 +169,7 @@ img {
 }
 
 @media (min-width: 768px) {
-    .title-1,
-    .title-2 {
+    .title-1 {
         &.margin {
             margin: 2rem auto 5rem auto;
         }
@@ -500,6 +503,14 @@ span.typed-cursor {
     &:hover {
         box-shadow: 0 0 0 9px var(--color-scrolled-second);
     }
+    &.mini {
+        width: 45px;
+        height: 45px;
+        box-shadow: 0 0 0 3px var(--color-scrolled);
+        &:hover {
+            box-shadow: 0 0 0 3px var(--color-scrolled-second);
+        }
+    }
 }
 
 //Portafolio
@@ -617,6 +628,11 @@ span.typed-cursor {
 }
 
 //Icon
+.tiny-icon {
+    width: 16px;
+    height: 16px;
+}
+
 .mini-icon {
     width: 24px;
     height: 24px;
@@ -626,4 +642,8 @@ span.typed-cursor {
 .norm-icon {
     width: 32px;
     height: 32px;
+}
+
+.list-ico {
+    line-height: 2;
 }
