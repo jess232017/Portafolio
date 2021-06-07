@@ -693,3 +693,14 @@ span.typed-cursor {
         }
     }
 }
+
+
+/*evita que al selecionar click en un enlace del mismo sitio 
+parte de este se oculte por el div.opcion-fixed*/
+
+:target::before {
+    content: "";
+    display: block;
+    height: 60px;
+    margin: -660px 0 0;
+}

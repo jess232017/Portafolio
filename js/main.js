@@ -14,6 +14,10 @@ const db = firebase.database();
 firebase.analytics();
 
 //#region Hero
+var menu = document.querySelector('#navcontain');
+scrollSpy(menu, 2000, 'easeInOutQuint');
+
+
 var typed = new Typed('#dev-text', {
     strings: ["Desarrollador de Software.", "Ingeniero en Computación."],
     typeSpeed: 80,
@@ -27,6 +31,8 @@ var typed = new Typed('#dev-text', {
 db.ref().child('front-end').on('value', snap => {
     document.querySelector('#front-end').innerHTML = "";
     let frontEnd = snap.val();
+
+    console.log(frontEnd);
 
     for (let i in frontEnd) {
         let item = frontEnd[i];
@@ -55,7 +61,7 @@ db.ref().child('services').on('value', snap => {
 });
 
 db.ref().child('portafolio').on('value', snap => {
-    let divPortf = document.querySelector('#portafolio');
+    let divPortf = document.querySelector('#portafolio-grid');
     divPortf.innerHTML = "";
     let Portfs = snap.val();
 
