@@ -352,8 +352,8 @@ div.fixed {
   width: 100%;
   z-index: 1000;
   top: 20px;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 div.fixed.scrolled {
@@ -592,6 +592,25 @@ span.typed-cursor {
           box-shadow: 0 0 0 3px var(--color-scrolled-second);
 }
 
+.service-icon {
+  margin: 0 auto;
+  width: 107px;
+  height: 107px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+
+.service-icon svg:nth-child(2) {
+  width: 37px;
+  position: absolute;
+  top: -10;
+  left: -50;
+}
+
 .descripcion {
   padding: 35px 20px;
 }
@@ -652,10 +671,10 @@ span.typed-cursor {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  right: 30px;
-  bottom: 30px;
-  width: 50px;
-  height: 50px;
+  right: 18px;
+  bottom: 18px;
+  width: 48px;
+  height: 48px;
   color: white;
   position: fixed;
   cursor: pointer;

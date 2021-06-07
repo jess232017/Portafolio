@@ -44,6 +44,16 @@ db.ref().child('back-end').on('value', snap => {
     }
 });
 
+db.ref().child('services').on('value', snap => {
+    document.querySelector('#servicios').innerHTML = "";
+    let services = snap.val();
+
+    for (let i in services) {
+        let item = services[i];
+        addService(item);
+    }
+});
+
 db.ref().child('portafolio').on('value', snap => {
     let divPortf = document.querySelector('#portafolio');
     divPortf.innerHTML = "";
@@ -149,6 +159,25 @@ function addPortfs(contenedor, data) {
     `;*/
 
     contenedor.appendChild(portf);
+}
+
+function addService(data) {
+    let service = document.createElement("div");
+    service.classList = 'c-flex align-center margin-mini box-shadow';
+    service.innerHTML = `
+        <div class="service-icon c-flex align-center">
+            <svg>
+                <use xlink:href="./img/svg-symbols.svg#back-splash"></use>
+            </svg>    
+            <svg>
+                <use xlink:href="./img/svg-symbols.svg#${data.imagen}"></use>
+            </svg>
+        </div>
+        <h4><a href="">${data.titulo}</a></h4>
+        <p>${data.subtitulo}</p>
+    `;
+
+    document.querySelector("#servicios").appendChild(service);
 }
 //#endregion
 

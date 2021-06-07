@@ -1,3 +1,8 @@
+.back-splash {
+  width: 100px;
+  height: 100px;
+}
+
 .icon-calendar {
   width: 32px;
   height: 32px;
@@ -11,6 +16,11 @@
 .icon-chevron {
   width: 24px;
   height: 24px;
+}
+
+.icon-design {
+  width: 32px;
+  height: 32px;
 }
 
 .icon-download {
@@ -46,6 +56,11 @@
 .icon-phone {
   width: 24px;
   height: 24px;
+}
+
+.icon-responsive {
+  width: 32px;
+  height: 32px;
 }
 
 .icon-whatsapp {

@@ -315,7 +315,7 @@ div.fixed {
     width: 100%;
     z-index: 1000;
     top: 20px;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     &.scrolled {
         top: 0px;
         background-color: rgba(255, 255, 255, .8);
@@ -523,6 +523,21 @@ span.typed-cursor {
     }
 }
 
+.service-icon {
+    margin: 0 auto;
+    width: 107px;
+    height: 107px;
+    justify-content: center;
+    transition: ease-in-out 0.3s;
+    position: relative;
+    svg:nth-child(2) {
+        width: 37px;
+        position: absolute;
+        top: -10;
+        left: -50;
+    }
+}
+
 //Portafolio
 .descripcion {
     padding: 35px 20px;
@@ -569,10 +584,10 @@ span.typed-cursor {
     display: flex;
     justify-content: center;
     align-items: center;
-    right: 30px;
-    bottom: 30px;
-    width: 50px;
-    height: 50px;
+    right: 18px;
+    bottom: 18px;
+    width: 48px;
+    height: 48px;
     color: white;
     position: fixed;
     cursor: pointer;
