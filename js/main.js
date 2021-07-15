@@ -124,7 +124,7 @@ function addPortfs(contenedor, data) {
     portf.classList = 'card-skills square';
     portf.innerHTML = `
         <figure class="overlay-hover">
-            <img src="img/portafolio/${data.imagen}">
+            <img height="160" width="auto" object-fit: contain; src="img/portafolio/${data.imagen}">
             <figcaption class="c-flex justy-center align-center">
                 <h3>hecho con</h3>
                 <a  class="flex" href="${data.url_github}" target="_blank">
